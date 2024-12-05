@@ -1,0 +1,20 @@
+jobs: 
+  print_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hello 
+        run: echo "Hello world!"
+
+  print_full_technical_info: 
+    runs-on: ubuntu-latest
+    needs: print_hello # This runs only after print_hello completes.
+    steps:
+      - name: Print full_tech_info 
+        run: sudo lshw
+
+  print_short_technical_info:
+    runs-on: ubuntu-latest
+    needs: print_full_technical_info # This runs only after print_full_technical_info completes.
+    steps: 
+      - name: Print short_tech_info 
+        run: sudo lshw -short
