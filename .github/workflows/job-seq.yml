@@ -1,3 +1,6 @@
+name: Seq Workflow
+on: workflow_dispatch
+
 jobs: 
   print_hello:
     runs-on: ubuntu-latest
